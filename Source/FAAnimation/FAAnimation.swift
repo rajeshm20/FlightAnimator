@@ -100,7 +100,7 @@ final public class FAAnimation : CAKeyframeAnimation {
 extension FAAnimation {
 
     private func configureValues(runningAnimation : FAAnimation? = nil) {
-        if let presentationLayer = (weakLayer?.presentationLayer() as? CALayer),
+        if let presentationLayer = weakLayer?.presentationLayer() ,
            let presentationValue = presentationLayer.anyValueForKeyPath(keyPath!) {
         
             if let currentValue = presentationValue as? CGPoint {
@@ -163,7 +163,9 @@ extension FAAnimation {
 extension FAAnimation {
     
     func valueProgress() -> CGFloat {
-        if let presentationValue = (weakLayer?.presentationLayer() as? CALayer)?.anyValueForKeyPath(keyPath!) {
+        if let presentationLayer = weakLayer?.presentationLayer() ,
+            let presentationValue = presentationLayer.anyValueForKeyPath(keyPath!) {
+        
             return interpolator!.valueProgress(presentationValue)
         }
     

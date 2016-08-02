@@ -106,7 +106,7 @@ public class FlightAnimator : FAAnimationMaker {
     }
     
     public func alpha(value : CGFloat) -> PropertyAnimationConfig {
-        return self.value(value, forKeyPath : "opacity")
+        return self.value(NSNumber(float : Float(value)), forKeyPath : "opacity")
     }
     
     public func anchorPoint(value : CGPoint) -> PropertyAnimationConfig {

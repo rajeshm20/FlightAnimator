@@ -68,7 +68,7 @@ final public class FAAnimationGroup : CAAnimationGroup {
         super.init()
         animations = [CAAnimation]()
         fillMode = kCAFillModeForwards
-        removedOnCompletion = false
+        removedOnCompletion = true
     }
     
     required public init?(coder aDecoder: NSCoder) {
